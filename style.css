@@ -67,7 +67,7 @@ button[type="submit"]:hover {
 
 .task p {
     color: #000;
-    margin: 0px 0 10px;
+    margin: 10px 0;
 }
 
 .container h1 {

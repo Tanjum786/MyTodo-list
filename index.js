@@ -24,6 +24,10 @@ function showTasks() {
       ? innerDiv.classList.add("completed")
       : innerDiv.classList.remove("completed");
 
+    let date = document.createElement("span");
+    date.innerHTML = `<strong>Created: </strong> ${value.date} `;
+    innerDiv.append(date);
+
     let p = document.createElement("p");
     p.innerHTML = `<strong>Title:</strong> ${value.title}`;
     innerDiv.append(p);
@@ -100,10 +104,28 @@ let removeTasks = () => {
 form.addEventListener("submit", function(e) {
   e.preventDefault();
   removeTasks();
+
+  const now = new Date();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  const year = now.getFullYear();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let amOrPm = "AM";
+
+  if (hours >= 12) {
+    amOrPm = "PM";
+    if (hours > 12) {
+      hours -= 12;
+    }
+  }
+  const formattedDate = `${month}/${day}/${year} at ${hours}:${minutes} ${amOrPm}`;
+  
   tasks.push({
     title: title.value,
     description: des.value,
     completed: false,
+    date: formattedDate,
   });
   saveTasksToLocalStorage();
   showTasks();
