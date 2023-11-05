@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    background-color: #fff;
+    width: 70%;
+    margin: auto;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+input,
+textarea,
+button {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    outline: none;
+    margin: 10px;
+    border-radius: 5px;
+    font: 400 1.1rem sans-serif;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.788);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(39, 39, 149);
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.task {
+    background-color: rgba(230, 227, 227, 0.521);
+    display: flex;
+    padding: 15px;
+    margin: 10px;
+    gap: 20px;
+    align-items: center;
+    font: 400 1.1rem sans-serif;
+    justify-content: space-between;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.751);
+}
+
+.button-container {
+    display: flex;
+}
+
+.task p {
+    color: #000;
+    margin: 0px 0 10px;
+}
+
+.container h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.task button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 100%;
+    border: none;
+}
+
+.del-btn {
+    background: radial-gradient(crimson, transparent);
+}
+.task button{
+    position: relative;
+
+}
+
+.task button[title]:hover::before {
+    content: attr(title);
+    background-color: #333333a8;
+    color: #fff;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: -33px;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: block;
+    width: 60px;
+    font-size: 10px;
+}
+
+.task>div {
+    word-break: break-word;
+}
+
+
+/* .complete-btn.active {
+    background: radial-gradient(green, transparent);
+
+}
+
+.complete-btn {
+    background: radial-gradient(crimson, transparent);
+} */
+
+@media(max-width:999px){
+    .container{
+        width: 90%;
+    }
+}
+@media(max-width:650px){
+    .task{
+        flex-direction: column;
+    }
+}
